@@ -34,7 +34,10 @@ var Iterators = (function() {
       // base value, and a combination action
       // function -- for example add and perform
       // the action on each successive element
-      
+      Iterators.each(arr, function(x) {
+        base = action(base, x);
+      })
+        return base;
     }
   };
 })();
