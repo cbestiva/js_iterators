@@ -8,6 +8,11 @@ var Iterators = (function() {
       // to which this function was applied
       // this function should also return the 
       // original array untouched
+      for (var i=0; i < arr.length; i++)
+      {
+        action(arr[i]);
+      }
+      return arr;
     },
     map: function(arr, action) {
       // implement map iterator
@@ -15,6 +20,11 @@ var Iterators = (function() {
       // to each element on the array
       // returning a new array containing
       // the results of the applications
+      var new_arr = [];
+      Iterators.each(arr, function(x) {
+        new_arr.push(action(x));
+      })
+      return new_arr;
     },
     reduce: function(arr, base, action) {
       // as a BONUS, implement reduce
@@ -24,6 +34,7 @@ var Iterators = (function() {
       // base value, and a combination action
       // function -- for example add and perform
       // the action on each successive element
+      
     }
   };
 })();
@@ -43,8 +54,8 @@ Iterators.each(arr, function (number) {
 // should output
 // => [1,2,3]
 console.log("applying Iterators.each to arr should return the array:");
-Iterators.each(arr, function (number) {
-});
+console.log(Iterators.each(arr, function (number) {
+}));
 
 // should output
 // [2, 4, 6]
